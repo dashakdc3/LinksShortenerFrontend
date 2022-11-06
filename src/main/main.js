@@ -16,12 +16,15 @@ function Main() {
       JSON.stringify(localStorage.getItem("access_token"))
     );
     try {
-      const response = await fetch("https://vfls.herokuapp.com/home.json", {
-        method: "GET",
-        headers: {
-          Authorization: `JWT ${accessTokenObj}`,
-        },
-      });
+      const response = await fetch(
+        "https://vfls.herokuapp.com/home/my_links.json",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `JWT ${accessTokenObj}`,
+          },
+        }
+      );
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
@@ -53,14 +56,17 @@ function Main() {
     let accessTokenObj = JSON.parse(
       JSON.stringify(localStorage.getItem("access_token"))
     );
-    const response = await fetch("https://vfls.herokuapp.com/home", {
-      method: "POST",
-      body: JSON.stringify(link),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `JWT ${accessTokenObj}`,
-      },
-    });
+    const response = await fetch(
+      "https://vfls.herokuapp.com/home/short_link/",
+      {
+        method: "POST",
+        body: JSON.stringify(link),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `JWT ${accessTokenObj}`,
+        },
+      }
+    );
     const data = await response.json();
     console.log(data);
   }

@@ -24,13 +24,19 @@ function Base() {
         <header className="header_container">
           <li>
             <i className="icons fa-solid fa-right-to-bracket"></i>
-            <a href="https://vfls.herokuapp.com/login/" className="sign">
+            <a
+              href="https://f-links-shortener.herokuapp.com/login/"
+              className="sign"
+            >
               Sign In
             </a>
           </li>
           <li>
             <i className="icons fa-solid fa-registered"></i>
-            <a href="https://vfls.herokuapp.com/register/" className="sign">
+            <a
+              href="https://f-links-shortener.herokuapp.com/register/"
+              className="sign"
+            >
               Sign Up
             </a>
           </li>
@@ -44,7 +50,10 @@ function Base() {
             />
             <div className="card-body">
               <p className="card-text card_text_update">
-                <a href="https://vfls.herokuapp.com/home/" className="sign">
+                <a
+                  href="https://f-links-shortener.herokuapp.com/home/"
+                  className="sign"
+                >
                   Short The Link
                 </a>
               </p>
@@ -58,7 +67,10 @@ function Base() {
             />
             <div className="card-body">
               <p className="card-text card_text_update">
-                <a href="https://vfls.herokuapp.com/home/" className="sign">
+                <a
+                  href="https://f-links-shortener.herokuapp.com/home/"
+                  className="sign"
+                >
                   My Links
                 </a>
               </p>
