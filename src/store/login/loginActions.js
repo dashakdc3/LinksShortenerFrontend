@@ -6,7 +6,7 @@ export const login = (username, password) => {
   return (dispatch) => {
     dispatch(loginRequest());
     axios
-      .post("https://vfls.herokuapp.com/login/", {
+      .post("https://vfls.herokuapp.com/user/login/", {
         username: username,
         password: password,
       })

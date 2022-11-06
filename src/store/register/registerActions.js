@@ -8,7 +8,7 @@ export const register = (email, username, password) => {
   return (dispatch) => {
     dispatch(registerRequest());
     api
-      .post("https://vfls.herokuapp.com/register/", {
+      .post("https://vfls.herokuapp.com/user/register/", {
         email: email,
         username: username,
         password: password,
