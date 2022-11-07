@@ -23,6 +23,7 @@ export const login = (username, password) => {
         }
       })
       .catch((error) => {
+        alert("User with given credential doesn't exist");
         dispatch(loginFailure(error.response));
       });
   };
