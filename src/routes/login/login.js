@@ -11,7 +11,8 @@ function Login({ userData, login }) {
 
   const submit = (event) => {
     event.preventDefault();
-    if (login(username, password)) navigate("/home");
+    login(username, password);
+    navigate("/home");
   };
   const logout = () => {
     localStorage.removeItem("access_token");
