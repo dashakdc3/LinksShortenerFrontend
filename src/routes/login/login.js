@@ -4,6 +4,7 @@ import { login } from "../../store/login/loginActions";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../header/header";
+import store from "../../store/store";
 function Login({ userData, login }) {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +13,9 @@ function Login({ userData, login }) {
   const submit = (event) => {
     event.preventDefault();
     login(username, password);
-    navigate("/home");
+    if (store.getState().login.users.length === 2) {
+      navigate("/home");
+    }
   };
   const logout = () => {
     localStorage.removeItem("access_token");
