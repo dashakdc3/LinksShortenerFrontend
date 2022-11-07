@@ -17,11 +17,9 @@ function Login({ userData, login }) {
   const submit = async (event) => {
     event.preventDefault();
     login(username, password);
-    // await setTimeout(3000);
-    setTimeout(() => checkloggin(), 3000);
-    // if (store.getState().login.users.length === 2) {
-    //   navigate("/home");
-    // }
+    const time = setTimeout(() => checkloggin(), 2000);
+    time();
+    clearTimeout(time);
   };
   const logout = () => {
     localStorage.removeItem("access_token");
