@@ -5,14 +5,15 @@ import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../header/header";
 import store from "../../store/store";
+import { setTimeout } from "timers/promises";
 function Login({ userData, login }) {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
     login(username, password);
+    await setTimeout(3000);
     if (store.getState().login.users.length === 2) {
       navigate("/home");
     }
