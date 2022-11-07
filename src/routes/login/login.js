@@ -5,18 +5,23 @@ import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../header/header";
 import store from "../../store/store";
-import { setTimeout } from "timers/promises";
 function Login({ userData, login }) {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const submit = async (event) => {
-    event.preventDefault();
-    login(username, password);
-    await setTimeout(3000);
+  const checkloggin = () => {
     if (store.getState().login.users.length === 2) {
       navigate("/home");
     }
+  };
+  const submit = async (event) => {
+    event.preventDefault();
+    login(username, password);
+    // await setTimeout(3000);
+    setTimeout(() => checkloggin(), 3000);
+    // if (store.getState().login.users.length === 2) {
+    //   navigate("/home");
+    // }
   };
   const logout = () => {
     localStorage.removeItem("access_token");
